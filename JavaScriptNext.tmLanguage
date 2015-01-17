@@ -18,6 +18,10 @@
 	<array>
 		<dict>
 			<key>include</key>
+			<string>#php</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#comments</string>
 		</dict>
 		<dict>
@@ -31,6 +35,20 @@
 	</array>
 	<key>repository</key>
 	<dict>
+		<key>php</key>
+		<dict>
+			<key>begin</key>
+			<string>(?=(^\s*)?&lt;\?)</string>
+			<key>end</key>
+			<string>(?!(^\s*)?&lt;\?)</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>source.php</string>
+				</dict>
+			</array>
+		</dict>
 		<key>brackets</key>
 		<dict>
 			<key>patterns</key>
@@ -2046,6 +2064,10 @@
 					<string>\\(x[\da-fA-F]{2}|u[\da-fA-F]{4}|.)</string>
 					<key>name</key>
 					<string>constant.character.escape.js</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#php</string>
 				</dict>
 			</array>
 		</dict>

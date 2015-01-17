@@ -7,11 +7,19 @@ firstLineMatch: ^#!/.*\b(node|js)$\n?
 keyEquivalent: ^~J
 
 patterns:
+- include: '#php'
 - include: '#comments'
 - include: '#support'
 - include: '#core'
 
 repository:
+  php:
+    patterns:
+    - begin: (?=(^\s*)?&lt;\?)
+      end: (?!(^\s*)?&lt;\?)
+      patterns:
+      - include: 'source.php'
+
   core:
     patterns:
     - include: '#leading-space'
@@ -756,6 +764,8 @@ repository:
 
     - name: constant.character.escape.js
       match: \\(x[\da-fA-F]{2}|u[\da-fA-F]{4}|.)
+
+    - include: '#php'
 
   literal-variable:
     patterns:
